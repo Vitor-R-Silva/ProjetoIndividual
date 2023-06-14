@@ -1,0 +1,233 @@
+@font-face {
+    font-family: Charming;
+    src: url(../assets/a-charming-font/Achafont.ttf);
+}
+
+@font-face {
+    font-family: Nightmare;
+    src: url(../assets/nightmare-before-christmas/Nightmare\ Before\ Christmas.ttf);
+}
+
+@font-face {
+    font-family: Gonjuring;
+    src: url(../assets/the-gonjuring/THE\ GONjURING.ttf);
+}
+
+* {
+    background: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #1D1E1B;
+}
+
+/* ---------------------------------- header */
+
+header {
+    display: flex;
+    background-color: #000000;
+    opacity: 0.3;
+    animation: 6s ease-in-out;
+    transition: 500ms linear;
+    box-shadow: 0px 0px 15px #000000;
+}
+
+header:hover {
+    opacity: 1;
+}
+
+header img {
+    background: none;
+}
+
+header #login {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 1150px;
+    transition: 500ms ease-in-out;
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(1px 1px 4px #fff);
+}
+
+header #login:hover {
+    /* background-color: #ff0000; */
+    filter: drop-shadow(1px 1px 20px #ff0000);
+    transform: scale(1.1);
+}
+
+
+
+/* -------------------------------------- main */
+
+.fotografia {
+    background-image: url(../assets/ceu_verde_estrelado.jpg);
+    background-size: cover;
+    height: 1200px;
+    box-shadow: 0px 10px 20px lightgreen;
+}
+
+.fotografia img {
+    background: none;
+    margin-left: 350px;
+    width: 700px;
+}
+
+.fotografia #foto_lovecraft {
+    transition: 500ms linear;
+    animation: 6s ease-in-out infinite;
+}
+
+.fotografia #foto_lovecraft:hover {
+    scale: calc(1.1);
+}
+
+.fotografia #assinatura_lovecraft {
+    margin-top: 55px;
+    filter: drop-shadow(12px 12px 7px #000);
+}
+
+.fotografia .tentaculos {
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    background: none;
+    position: absolute;
+    margin-top: 357px;
+    margin-left: -320px;
+    gap: 150px;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.conteudo #luz {
+    width: 100%;
+    background: none;
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    transition: 2s ease-in-out;
+    overflow-block: hidden;
+}
+
+.conteudo #sorcer {
+    /* pointer-events: none; */
+    background: none;
+    z-index: 3;
+    /* display: none; */
+    filter: drop-shadow(12px 12px 7px #000);
+
+}
+
+.conteudo #luz:hover {
+    z-index: 2;
+    opacity: 1;
+}
+
+.texto {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    font-family: Gonjuring;
+    color: #fff;
+    background: transparent;
+    font-size: 30px;
+    margin-top: -800px;
+    gap: 600px;
+    padding: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.texto #text1 {
+    margin-left: 70px;
+}
+
+.container_necronomicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 700px;
+    margin-left: 80px;
+    margin-right: 80px;
+    height: 200px;
+    font-family: Gonjuring;
+}
+
+.container_necronomicon #titulo_necronomicon {
+    font-size: 80px;
+    color: #8b0000;
+}
+
+.container_necronomicon #texto_necronomicon {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.container_necronomicon #circulo {
+    position: absolute;
+    margin-top: 700px;
+    background: none;
+    z-index: 1;
+}
+
+.container_necronomicon #livro {
+    margin-top: 200px;
+    margin-right: 20px;
+    z-index: 2;
+    background: none;
+    width: 400px;
+    animation: movimento 7s ease-in-out infinite;
+    pointer-events: none;
+    filter: drop-shadow(12px 12px 20px #000);
+
+}
+
+@keyframes movimento {
+    0%{
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ----------------------------------------------------- footer */
+
+footer {
+    background-image: url(../assets/texturinha.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 800px;
+    box-shadow: 10px 0px 30px #000000;
+}
+
+footer img {
+    background: none;
+    height: 400px;
+    width: 400px;
+    margin-left: 950px;
+}
+
+.pennywise {
+    background: none;
+    width: 10px;
+    margin-left: 850px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/tela_inicial.CSS">
+    <title>ScaryIt</title>
+</head>
+
+<body>
+    <header>
+        <a href="#aprensentacao"><img src="./assets/pet_semetary.png" alt=""
+                style="width: 100px;"></a>
+        <nav id="links">
+            <a href="#autores">Autores</a>
+            <a href="#diretores">Diretores</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+        <a href="./login.HTML"><img src="./assets/abertura-da-porta-aberta.png" alt="" id="login"></a>
+    </header>
+
+    <main>
+        <div class="aprensentacao" id="aprensentacao">
+            <img src="./assets/terror/pisca.gif" alt="" id="lamapada">
+            <div id="content_apresentacao">
+                <div id="text_apresentacao">
+                    <h1>STAY OUT!</h1>
+                    <span id="citacaoKing">Monsters are real, ghosts are too. They live inside of us and sometimes they
+                        win.</span>
+                </div>
+            </div>
+
+            <div class="autores" id="autores">
+                <h1>Mestres do horror</h1>
+                <div id="poe" onclick="telaPoe()">
+                    <img src="./assets/terror/Edgar1.png" alt="" id="foto_poe">
+                    <img src="./assets/poes_signature.png" alt="" id="assinatura_poe">
+                </div>
+
+                <div id="lovecraft" onclick="telaLovecraft()">
+                    <img src="./assets/terror/Love1.png" alt="" id="foto_lovecraft">
+                    <img src="./assets/lovecraft_signature.png" alt="" id="assinatura_lovecraft">
+                </div>
+            </div>
+
+            <div class="diretores" id="diretores">
+                <div>
+                    <h1>Diretores Essenciais</h1>
+                    <div class="slider">
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/carpenter.jpg" alt=""></div>
+                            <span id="nome_diretor">John Carpenter</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/darioArgento.jpg" alt=""></div>
+                            <span id="nome_diretor">Dario Argento</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/wesCraven.jpg" alt=""></div>
+                            <span id="nome_diretor">Wes Craven</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/peele.jpg" alt=""></div>
+                            <span id="nome_diretor">Jordan Peele</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/jamesWan.jpg" alt=""></div>
+                            <span id="nome_diretor">James Wan</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/carpenter.jpg" alt=""></div>
+                            <span id="nome_diretor">John Carpenter</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/darioArgento.jpg" alt=""></div>
+                            <span id="nome_diretor">Dario Argento</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/wesCraven.jpg" alt=""></div>
+                            <span id="nome_diretor">Wes Craven</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/peele.jpg" alt=""></div>
+                            <span id="nome_diretor">Jordan Peele</span>
+                        </div>
+                        <div class="slide-track">
+                            <div class="slide"><img src="./assets/jamesWan.jpg" alt=""></div>
+                            <span id="nome_diretor">James Wan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recomendacao">
+                <h1>O que assistir ?</h1>
+                <div id="exibirRecomendacao"></div>
+                <button onclick="recomendacao()">Recomendacao</button>
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div id="container_quiz">
+                <img src="./assets/velotrol.png" alt="">
+                <h1>Do you wanna play?</h1>
+                <button onclick="telaQuiz()">Jogar</button>
+            </div>
+        </div>
+    </main>
+<script>
+    var lista_filmes = [
+        "O Bebe de Rosemary",
+        "Midsommar",
+        "Ouija: A Origem do Mal",
+        "O Espelho",
+        "Hush: A Morte Ouve",
+        "Evil Dead (A Morte do Demonio)",
+        "Panico",
+        "It: A Coisa"
+    ]
+
+    function recomendacao(){
+        var filme_recomendado = Math.floor([Math.random() * lista_filmes.length]);
+
+        console.log(filme_recomendado);
+
+        exibirRecomendacao.innerHTML = `${lista_filmes[filme_recomendado]}`
+
+
+    }
+
+    function telaQuiz(){
+        window.location.href = "./quiz.HTML"
+    }
+
+    function telaPoe(){
+        window.location.href = "./poe.HTML"
+    }
+
+    function telaLovecraft(){
+        window.location.href = "./hpLovecraft.HTML"
+    }
+</script>
+</body>
+
+</html>

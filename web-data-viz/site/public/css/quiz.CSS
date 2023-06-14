@@ -1,0 +1,178 @@
+@font-face {
+    font-family: Charming;
+    src: url(../assets/a-charming-font/Achafont.ttf);
+}
+
+@font-face {
+    font-family: Nightmare;
+    src: url(../assets/nightmare-before-christmas/Nightmare\ Before\ Christmas.ttf);
+}
+
+@font-face {
+    font-family: Gonjuring;
+    src: url(../assets/the-gonjuring/THE\ GONjURING.ttf);
+}
+
+@font-face {
+    font-family: Rundeck;
+    src: url(../assets/rundeck-texture/rundeck/rundeck.otf);
+}
+
+* {
+    scroll-behavior: smooth;
+    background: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Rundeck;
+    text-shadow: 4px 4px 70px #fff;
+}
+
+body {
+    background-color: #1D1E1B;
+}
+
+/* ---------------------------------- header */
+
+header {
+    display: flex;
+    /* background-color: #000000; */
+    background-color: transparent;
+    opacity: 0.3;
+    animation: 6s ease-in-out;
+    transition: 500ms linear;
+    box-shadow: 0px 0px 9px #0000006c;
+    position: sticky;
+}
+
+header:hover {
+    opacity: 1;
+}
+
+header img {
+    background: none;
+}
+
+header #login {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 1150px;
+    transition: 500ms ease-in-out;
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(1px 1px 4px #fff);
+}
+
+header #login:hover {
+    /* background-color: #ff0000; */
+    filter: drop-shadow(1px 1px 20px #ff0000);
+    transform: scale(1.1);
+}
+
+header #links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: #000000; */
+    text-decoration: none;
+    gap: 50px;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 700px;
+    font-family: Gonjuring;
+}
+
+header #links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 1s ease-in-out;
+}
+
+header #links a:hover {
+    color: #ff0000;
+    transform: scale(1.5);
+}
+
+/* ---------------------------------------- main */
+main {
+    background-image: url(../assets/open-door.gif);
+}
+
+.app {
+    background: #3a383898;
+    width: 90%;
+    max-width: 600px;
+    margin: 0px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.app h1 {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.bnt {
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.bnt:hover:not([disabled]) {
+    background: red;
+    color: #fff;
+}
+
+.bnt:disabled {
+    cursor: no-drop;
+}
+
+#botao_proximo {
+    color: #000;
+    font-weight: 500;
+    width: 150px;
+    border: solid #ff0000 2px;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    filter: drop-shadow(1px 1px 20px #ff0000);
+}
+
+#botao_proximo:hover {
+    text-transform: none;
+    background-image: url(../assets/fogo.gif);
+    background-position: center;
+    transform: scale(1.1);
+}
+
+.Certo {
+    background-color: #9aeabc;
+}
+
+.Errado {
+    background: #ff9393;
+}

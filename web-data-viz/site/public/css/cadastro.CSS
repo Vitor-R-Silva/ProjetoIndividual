@@ -1,0 +1,170 @@
+@font-face {
+    font-family: Charming;
+    src: url(../assets/a-charming-font/Achafont.ttf);
+}
+
+@font-face {
+    font-family: Nightmare;
+    src: url(../assets/nightmare-before-christmas/Nightmare\ Before\ Christmas.ttf);
+}
+
+@font-face {
+    font-family: Gonjuring;
+    src: url(../assets/the-gonjuring/THE\ GONjURING.ttf);
+}
+
+* {
+    scroll-behavior: smooth;
+    background: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Gonjuring;
+}
+
+body {
+    background-color: #1D1E1B;
+}
+
+/* ---------------------------------- header */
+
+header {
+    display: flex;
+    /* background-color: #000000; */
+    background-color: transparent;
+    opacity: 0.3;
+    animation: 6s ease-in-out;
+    transition: 500ms linear;
+    box-shadow: 0px 0px 9px #0000006c;
+}
+
+header:hover {
+    opacity: 1;
+}
+
+header img {
+    margin: 0;
+    background: none;
+}
+
+header #login {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 1150px;
+    transition: 500ms ease-in-out;
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(1px 1px 4px #fff);
+}
+
+header #login:hover {
+    /* background-color: #ff0000; */
+    filter: drop-shadow(1px 1px 20px #ff0000);
+    transform: scale(1.1);
+}
+
+header #links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: #000000; */
+    text-decoration: none;
+    gap: 50px;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 700px;
+    font-family: Gonjuring;
+}
+
+header #links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 1s ease-in-out;
+}
+
+header #links a:hover {
+    color: #ff0000;
+    transform: scale(1.5);
+}
+
+/* -----------------------------------------formulario de Login */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+    background-image: url(../assets/entrada.png);
+    background-size: cover;
+}
+
+.login_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    margin-top: -350px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 1);
+    border-radius: 2%;
+}
+
+input {
+    background-color: transparent;
+    text-decoration: none;
+    border: solid #0000006c 2px;
+    padding: 10px;
+    border-radius: 5%;
+    transition: 500ms ease-in-out;
+    font-size: 20px;
+}
+
+input:active {
+    transform: scale(1.1);
+}
+
+button {
+    width: 200px;
+    padding: 10px;
+    border: solid #ff0000 2px;
+    border-radius: 2%;
+    filter: drop-shadow(1px 1px 20px #ff0000);
+    transition: 500ms ease-in-out;
+    font-size: 20px;
+}
+
+button:hover {
+    text-transform: none;
+    background-image: url(../assets/fogo.gif);
+    background-position: center;
+    transform: scale(1.1);
+}
+
+.fogo_janelas {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    gap: 500px;
+    z-index: -1;
+    margin-top: -200px;
+    margin-left: -20px;
+}
+
+span {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+span a {
+    text-decoration: none;
+    color: #fff;
+    transition: 500ms ease-in-out;
+}
+
+span a:hover {
+    color: #ff0000;
+    filter: drop-shadow(1px 1px 20px #ff0000);
+    transform: scale(1.1);
+}

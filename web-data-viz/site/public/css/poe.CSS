@@ -1,0 +1,158 @@
+@font-face {
+    font-family: Charming;
+    src: url(../assets/a-charming-font/Achafont.ttf);
+}
+@font-face {
+    font-family: Nightmare;
+    src: url(../assets/nightmare-before-christmas/Nightmare\ Before\ Christmas.ttf);
+}
+@font-face {
+    font-family: Gonjuring;
+    src: url(../assets/the-gonjuring/THE\ GONjURING.ttf);
+}
+
+* {
+    background: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #1D1E1B;
+}
+
+/* ---------------------------------- header */
+
+header {
+    display: flex;
+    background-color: #000000;
+    opacity: 0.3;  
+    animation: 6s ease-in-out;
+    transition: 500ms linear;  
+    box-shadow: 0px 0px 15px #000000;
+}
+
+header:hover {
+    opacity: 1;
+}
+
+header img {
+    background: none;
+}
+
+header #login {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 1150px;
+    transition: 500ms ease-in-out;
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(1px 1px 4px #fff);
+}
+
+header #login:hover {
+    /* background-color: #ff0000; */
+    filter: drop-shadow(1px 1px 20px #ff0000);
+    transform: scale(1.1);
+}
+
+/* --------------------------------------- main */
+
+.fotografia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 10px 20px #ffff;
+}
+
+.fotografia #assinatura_poe {
+    width: 500px;
+    margin-top: 20px;
+    background: none;
+    filter: drop-shadow(12px 12px 20px #000);
+}
+
+.fotografia #moldura_penas {
+    width: 1100px;
+    background: none;
+    animation: balanço 6s ease-in-out infinite;
+    filter: drop-shadow(12px 12px 20px #000);
+}
+
+.fotografia #foto_poe {
+    z-index: 1;
+    background: none;
+    width: 400px;
+    position: absolute;
+    margin-top: -220px;
+    transition: 500ms linear;
+    border-radius: 52%;
+    box-shadow: 0px 10px 10px #000000;
+}
+
+.fotografia #foto_poe:hover {
+    transform: scale(1.1);
+}
+
+@keyframes balanço {
+    0% {
+        transform: translateX(0);
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateX(10px);
+        transform: translateY(70px);
+    }
+    100% {
+        transform: translateX(0);
+        transform: translateY(0);
+    }
+}
+
+.texto {
+    font-family: Gonjuring;
+    font-size: 30px;
+    margin-top: 150px;
+    margin-left: 550px;
+    margin-right: 100px;
+    color: antiquewhite;
+}
+
+.conteudo #penas_caindo {
+    animation: balanço 6s ease-in-out infinite;
+    position: absolute;
+    background: none;
+    width: 1200px;
+    filter: drop-shadow(12px 12px 20px #000);
+}
+
+.conteudo #gato {
+    width: 100px;
+}
+
+/* -------------------------------- footer */
+
+footer {
+    background-image: url(../assets/texturinha.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 150px;
+    box-shadow: 10px 0px 30px #000000;
+}
+
+footer img {
+    background: none;
+    height: 400px;
+    width: 400px;
+    margin-left: 950px;
+}
+
+.pennywise {
+    background: none;
+    width: 10px;
+    margin-left: 850px;
+}
