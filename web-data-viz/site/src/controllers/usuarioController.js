@@ -102,8 +102,56 @@ function pontuar(req, res) {
     }
 }
 
+function mandarPontuacao (req, res) {
+    var pontuacao = req.body.pontuacaoServer;
+    var fkUsuario = req.body.fkUsuarioServer;
+
+    console.log("Esse aqui é o valor da sua pontuação: " + pontuacao);
+    console.log("Aqui é o valor da fkUsuario: " + fkUsuario)
+
+    if (pontuacao == null || pontuacao == undefined){
+        res.status(404).send("Meu parceiro, sem pontuação é pegado :(")
+        if (fkUsuario == null || fkUsuario == undefined){
+            res.status(404).send("Meu parceiro, sua fk ta vazia... :(")
+        }
+    }else {
+        usuarioModel.mandarPontuacao(fkUsuario, pontuacao)
+        .then(function (resultado) {
+        
+            res.status(204).send("Update realizado com sucesso.");
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar ao inseriri o voto da enquete! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
+
+function carregarTop10 (req, res){
+    console.log("To na controler da carregar dados");
+    usuarioModel.carregarTop10()
+    .then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
-    pontuar
+    pontuar,
+    mandarPontuacao,
+    carregarTop10
 }

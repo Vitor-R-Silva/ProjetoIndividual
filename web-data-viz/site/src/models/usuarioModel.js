@@ -32,8 +32,22 @@ function pontuar(qtdAcertos, idUsuario) {
     return database.executar(instrucao);
 }
 
+function mandarPontuacao (fkUsuario, pontuacao) {
+    var instrucao = `INSERT INTO quiz (fkUsuario, pontuacao) VALUES
+    (${fkUsuario}, ${pontuacao});`
+    return database.executar(instrucao)
+}
+
+function carregarTop10() {
+    console.log("To na model do select do ranking");
+    var instrucao = `SELECT usuario.nome, quiz.pontuacao from usuario join quiz on idUsuario = fkUsuario;`
+    return database.executar(instrucao)
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    pontuar
+    pontuar,
+    mandarPontuacao,
+    carregarTop10
 };

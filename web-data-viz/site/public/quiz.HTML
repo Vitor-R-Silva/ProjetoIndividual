@@ -10,30 +10,30 @@
 
 <body>
     <header>
-        <a href="./index.HTML"><img src="../assets/pet_semetary.png" alt=""
-                style="width: 100px;"></a>
+        <a href="./index.HTML"><img src="../assets/pet_semetary.png" alt="" style="width: 100px;"></a>
         <a href="./login.HTML"><img src="../assets/abertura-da-porta-aberta.png" alt="" id="login"></a>
     </header>
 
-        <main>
-            <div class="app">
-                <h1>Que os jogos começem!</h1>
-                <div class="quiz">
-                    <h2 id="pergunta">Pergunta fica aqui</h2>
-                    <div id="botoes_resposta">
-                        <button class="bnt">Resposta 1</button>
-                        <button class="bnt">Resposta 2</button>
-                        <button class="bnt">Resposta 3</button>
-                        <button class="bnt">Resposta 4</button>
-                    </div>
-                    <button id="botao_proximo">Proximo</button>
+    <main>
+        <div class="app">
+            <h1>Que os jogos começem!</h1>
+            <div class="quiz">
+                <h2 id="pergunta">Pergunta fica aqui</h2>
+                <div id="botoes_resposta">
+                    <button class="bnt">Resposta 1</button>
+                    <button class="bnt">Resposta 2</button>
+                    <button class="bnt">Resposta 3</button>
+                    <button class="bnt">Resposta 4</button>
                 </div>
+                <button id="botao_proximo">Proximo</button>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <button onload="carregarTop10()">Ranking</button>
-        <div id="container"></div>
-        
-<script src="./js/quiz.JS"></script>
+    <button onclick="puxarRanking()" class="top10">Ranking</button>
+    <div id="container"></div>
+
+    <script src="./js/quiz.JS"></script>
 </body>
+
 </html>

@@ -97,6 +97,8 @@ const botao_proximo = document.getElementById("botao_proximo");
 
 let contador_pergunta_atual = 0;
 let pontuacao = 0;
+let fkUsuario = sessionStorage.ID_USUARIO;
+
 
 function comecar_quiz(){
     contador_pergunta_atual = 0;
@@ -151,7 +153,7 @@ function resposta_selecionada(alternativas) {
 
 function exibirPontuacao() {
     redefinirEstado();
-    pergunta.innerHTML  = `Vocẽ fez ${pontuacao} de ${perguntas.length} !`;
+    pergunta.innerHTML  = `Você fez ${pontuacao} de ${perguntas.length} !`;
     botao_proximo.innerHTML = "Tentar Novamente";
     botao_proximo.style.display = "block"
 }
@@ -164,12 +166,74 @@ function definir_botao_proximo(){
         exibirPontuacao();
     }
 }
+function puxarRanking() {
+    fetch("/usuarios/buscarDados", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    }).then(function (resposta) {
+        
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            resposta.json().then(result => {
+                var posicao = 0
+                for(var i =0; i < result.length; i++){
+                    var tabelas = result[i];
+                    posicao++
+                    document.getElementById("container").innerHTML += `
+                    <div class="tabela">
+                        <div class="posicao">
+                            <p class="subtitulo">Colocacao</p>
+                            <p> ${posicao} </p>
+                        </div>
+                        <div class="posicao">
+                            <p class="subtitulo">Nome</p>
+                            <p>${tabelas.nome}</p>
+                        </div>
+                        <div class="posicao">
+                            <p class="subtitulo">Pontuacao</p>
+                            <p> ${tabelas.pontuacao} </p>
+                        </div>
+                    </div>
+                    `
+                    console.log(tabelas)
+                };
+            })
+
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao cadastrar',
+                text: 'Tente novamente!'
+            })
+        }
+    }).catch(function (resposta) {
+        console.log(`ERRO: ${resposta}`);
+    });
+
+
+}
 
     botao_proximo.addEventListener("click", ()=>{
         if(contador_pergunta_atual < perguntas.length){
             definir_botao_proximo();
         } else {
+            console.log("Esse é o valor sendo passado pro fethc do idUsuario:" + fkUsuario);
+            fetch("/usuarios/attBancoQuiz", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    pontuacaoServer: pontuacao,
+                    fkUsuarioServer: fkUsuario
+                })
+            })
+            
             comecar_quiz();
+
         }
     })
 

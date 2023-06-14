@@ -17,4 +17,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/attBancoQuiz", function (req, res){
+    usuarioController.mandarPontuacao(req, res);
+})
+router.get("/buscarDados", function (req, res){
+    console.log("To na rota do buscar dados");
+    usuarioController.carregarTop10(req, res);
+})
+
 module.exports = router;
