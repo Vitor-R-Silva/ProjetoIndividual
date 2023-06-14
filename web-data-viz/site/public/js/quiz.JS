@@ -167,6 +167,7 @@ function definir_botao_proximo(){
     }
 }
 function puxarRanking() {
+    document.getElementById("container").innerHTML = ``
     fetch("/usuarios/buscarDados", {
         method: "GET",
         headers: {
@@ -185,7 +186,7 @@ function puxarRanking() {
                     document.getElementById("container").innerHTML += `
                     <div class="tabela">
                         <div class="posicao">
-                            <p class="subtitulo">Colocacao</p>
+                            <p class="subtitulo">Histórico</p>
                             <p> ${posicao} </p>
                         </div>
                         <div class="posicao">
